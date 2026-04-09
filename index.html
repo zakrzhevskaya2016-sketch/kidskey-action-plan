@@ -1,104 +1,114 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Engine — LearnLink</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        #password-screen { display: flex; justify-content: center; align-items: center; height: 100vh; background: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-        #password-form { text-align: center; padding: 40px; }
-        #password-form h2 { color: #111; margin-bottom: 20px; font-size: 24px; }
-        #password-form input { padding: 12px 20px; font-size: 16px; border: 2px solid #ddd; border-radius: 8px; background: #fff; color: #111; outline: none; width: 250px; }
-        #password-form input:focus { border-color: #111; }
-        #password-form button { padding: 12px 30px; font-size: 16px; background: #111; color: #fff; border: none; border-radius: 8px; cursor: pointer; margin-left: 10px; font-weight: bold; }
-        #error { color: #ef4444; margin-top: 10px; display: none; }
-        #content { display: none; max-width: 800px; margin: 0 auto; padding: 40px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #222; background: #fff; min-height: 100vh; line-height: 1.7; }
-        #content h1 { color: #111; font-size: 28px; margin: 30px 0 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        #content h2 { color: #111; font-size: 22px; margin: 25px 0 12px; }
-        #content h3 { color: #444; font-size: 18px; margin: 20px 0 10px; }
-        #content p { margin: 8px 0; }
-        #content strong { color: #111; }
-        #content ul, #content ol { margin: 8px 0 8px 25px; }
-        #content li { margin: 6px 0; }
-        #content code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 14px; color: #111; }
-        #content pre { background: #f5f5f5; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; border: 1px solid #e0e0e0; }
-        #content pre code { background: none; padding: 0; font-size: 13px; color: #333; }
-        #content table { border-collapse: collapse; width: 100%; margin: 10px 0; }
-        #content th, #content td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; font-size: 14px; }
-        #content th { background: #f5f5f5; color: #111; font-weight: bold; }
-        #content hr { border: none; border-top: 1px solid #eee; margin: 25px 0; }
-        #content a { color: #2563eb; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Engine — LearnLink</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+#password-screen{display:flex;justify-content:center;align-items:center;height:100vh;background:#f5f5f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+#password-form{text-align:center;padding:40px}
+#password-form h2{color:#111;margin-bottom:20px;font-size:24px}
+#password-form input{padding:12px 20px;font-size:16px;border:2px solid #ddd;border-radius:8px;background:#fff;color:#111;outline:none;width:250px}
+#password-form input:focus{border-color:#111}
+#password-form button{padding:12px 30px;font-size:16px;background:#111;color:#fff;border:none;border-radius:8px;cursor:pointer;margin-left:10px;font-weight:bold}
+#error{color:#ef4444;margin-top:10px;display:none}
+#content{display:none;max-width:800px;margin:0 auto;padding:40px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#222;background:#fff;min-height:100vh;line-height:1.7}
+h1{color:#111;font-size:28px;margin:30px 0 15px;border-bottom:2px solid #eee;padding-bottom:10px}
+h2{color:#111;font-size:22px;margin:25px 0 12px}
+h3{color:#444;font-size:18px;margin:20px 0 10px}
+p{margin:8px 0}
+strong{color:#111}
+ul,ol{margin:10px 0 10px 25px}
+li{margin:6px 0}
+code{background:#f0f0f0;padding:2px 6px;border-radius:4px;font-size:14px}
+pre{background:#f5f5f5;padding:15px;border-radius:8px;overflow-x:auto;margin:10px 0;border:1px solid #e0e0e0;font-size:13px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid #ddd;padding:8px 12px;text-align:left;font-size:14px}
+hr{border:none;border-top:1px solid #eee;margin:25px 0}
+</style>
 </head>
 <body>
-    <div id="password-screen">
-        <div id="password-form">
-            <h2>Content Engine</h2>
-            <div>
-                <input type="password" id="pwd" placeholder="Password" onkeypress="if(event.key==='Enter')checkPwd()">
-                <button onclick="checkPwd()">Open</button>
-            </div>
-            <p id="error">Wrong password</p>
-        </div>
-    </div>
-    <div id="content"><h1>Content Engine — LearnLink</h1>
+<div id="password-screen"><div id="password-form"><h2>Content Engine</h2><div><input type="password" id="pwd" placeholder="Password" onkeypress="if(event.key==='Enter')checkPwd()"><button onclick="checkPwd()">Open</button></div><p id="error">Wrong password</p></div></div>
+<div id="content"><h1>Content Engine — LearnLink</h1>
+
 <p>Что сделано:</p>
+
 <ul>
-<li>консалты и ресерч рынка по контент заводам </li>
-<li>MVP контент завода </li>
-<li>роадмап на месяц </li>
+<li>консалты и ресерч рынка по контент заводам</li>
+<li>MVP контент завода</li>
+<li>роадмап на месяц</li>
 </ul>
-<hr />
+
+<hr>
+
 <h3>Showcase (сгенерировано за эти дни):</h3>
+
 <ol>
 <li>✅ Milo (ребёнок) — lipsync видео, poker face, 9 сек</li>
 <li>✅ Sarah (мама) — то же видео, другой аватар, тот же pipeline</li>
 <li>✅ Milo — multi-scene (бежит к ноутбуку → садится → product demo → CTA)</li>
 <li>✅ Карусель — "Топ-5 платформ для английского"</li>
-<li>✅ MVP CSM </li>
-<li>✅ альбиноска эмейзинг </li>
+<li>✅ MVP CSM</li>
+<li>✅ альбиноска эмейзинг</li>
 <li>✅ альбиноска i came i saw</li>
-</ol>
-<hr />
+</ul>
+
+<hr>
+
 <h2>Что я предлагаю</h2>
+
 <p><strong>Процесс 1 — Trend Research (ваши руки и голова, я обучу):</strong></p>
+
 <ul>
 <li>Human: Сбор библиотеки референсов из ниши. Анализ комментариев (pain points для контента). ДДЛ: зависит от исполнителя, эстимейт 3 дня</li>
 <li>AI: Разбор на хуки, сценарии, аватары, фоны, CTA. 1 час</li>
-<li>Результат: библиотека из 30+ референсов, разложенных на компоненты с помощью AI. Минимум 10 должны быть с воронкой на продажу </li>
+<li>Результат: библиотека из 30+ референсов, разложенных на компоненты с помощью AI. Минимум 10 должны быть с воронкой на продажу</li>
 </ul>
+
 <p><strong>Процесс 2 — Генерим пазлы в конструктор:</strong></p>
+
 <ul>
 <li>Собрать продукт плейсмент видео (с вас посылы + скриншоты/скринкасты)</li>
-<li>Собрать библу аватаров </li>
-<li>Собрать библу СТА </li>
-<li>Собрать библу воронок, настроить мэничат
-тут оч важен импут продукта -- кто ЦА кого смотрят кому доверяют что цепляет; 
-какие боли как закрывали что конвертит в покупку 
-от сбора контекста и трендвотчинга 1 день на итерацию (по опыту будет 2-3)</li>
+<li>Собрать библу аватаров</li>
+<li>Собрать библу СТА</li>
+<li>Собрать библу воронок, настроить мэничат</li>
 </ul>
+<p>тут оч важен импут продукта -- кто ЦА кого смотрят кому доверяют что цепляет;</p>
+<p>какие боли как закрывали что конвертит в покупку</p>
+<p>от сбора контекста и трендвотчинга 1 день на итерацию (по опыту будет 2-3)</p>
+
+
 <p><strong>Процесс 3 — Я достраиваю pipeline:</strong></p>
+
 <ul>
 <li>Кастомизация под ваши тренды и аватары — 7 дней от сбора трендов</li>
 <li>Настройка под ваши API ключи — 1 час</li>
 <li>Весь код на вашем сервере</li>
 <li>Интерфейс через ClickUp и CMS — 1-3 дня</li>
 </ul>
+
+
 <h3>Процесс 4: Генерация контента</h3>
+
 <ul>
 <li>21 первых видео (я генерю руками) — параллельно с кастомизацией, неделя от трендвотчинга</li>
 <li>21 новых видео (вместе генерим руками) — N дней зависит от исполнителя</li>
-<li>21 новых видео генерит исполнитель — N дней зависит от исполнителя </li>
+<li>21 новых видео генерит исполнитель — N дней зависит от исполнителя</li>
 </ul>
+
 <h3>Процесс 5: Постинг и аналитика</h3>
+
 <ul>
 <li>Постинг вручную или авто (ваши руки, прогретый ГЕО аккаунт) — 3 видео в день</li>
 <li>Сбор метрик в Google Sheets (ваши руки или авто) — чек каждый день, сбор раз в неделю</li>
-<li>AI анализирует: какие хуки, аватары, посылы работают лучше — раз в неделю </li>
+<li>AI анализирует: какие хуки, аватары, посылы работают лучше — раз в неделю</li>
 </ul>
+
 <h3>Артефакт через месяц:</h3>
+
 <p>Вы получаете:</p>
+
 <ul>
 <li><strong>Готовый pipeline</strong> — Pipeline настроен под ваш продукт от референса к готовому видео</li>
 <li>Умный AI директор: правила генерации аватаров, промптов для всего конвеера, if/when механик самопроверки и минимизации ошибок</li>
@@ -108,46 +118,65 @@
 <li><strong>AI рекомендации</strong> — какой контент делать дальше (тест)</li>
 <li>Всё работает на ваших ключах, ваш продукт навсегда</li>
 </ul>
+
 <h3>Что можно делать с этим pipeline:</h3>
+
 <ul>
 <li>Органика (рилсы, карусели, TikTok)</li>
 <li>Paid (креативы для рекламы)</li>
 <li>Product placement (демо фичей через AI аватары)</li>
 <li>Контент в продукт (обучающие видео)</li>
-<li>Любая ниша, любой продукт — меняешь аватар и тему. быстрые тесты гипотез </li>
+<li>Любая ниша, любой продукт — меняешь аватар и тему. быстрые тесты гипотез</li>
 </ul>
-<hr />
+
+<hr>
+
 <h3>Что НЕ входит (ваши расходы):</h3>
+
 <ul>
-<li>API ключи, стоимость генераций и подписок </li>
+<li>API ключи, стоимость генераций и подписок</li>
 <li>Телефон для постинга + прокси</li>
 <li>Руки на trend watching + постинг + сбор аналитики</li>
-<li>Интеграция с гита на ваш сервер </li>
+<li>Интеграция с гита на ваш сервер</li>
 </ul>
-<hr />
+
+<hr>
+
 <h3>Права и ownership</h3>
-<p><strong>Процесс:</strong>
-1. Я настраиваю pipeline под вашу нишу у себя локально с вашими API ключами 
-2. Когда готово (сделала первые 21 видео качественно) — делаю первый push на GitHub
-3. Вы деплоите на свой сервер, начинаем генерацию через ClickUp полностью на вашей инфраструктуре. Продолжаю улучшать пайплайн по необходимости у себя локально -&gt; пуш на гит -&gt; деплой изменений к вам
-5. Через месяц финальный push от меня к вам 
-6. Если прекращаем сотрудничество, то репа остается вам, я делаю ее копирование и продолжаю строить свой SaaS уже в новом репозитории</p>
+
+<p><strong>Процесс:</strong></p>
+<ol>
+<li>Я настраиваю pipeline под вашу нишу у себя локально с вашими API ключами</li>
+<li>Когда готово (сделала первые 21 видео качественно) — делаю первый push на GitHub</li>
+<li>Вы деплоите на свой сервер, начинаем генерацию через ClickUp полностью на вашей инфраструктуре. Продолжаю улучшать пайплайн по необходимости у себя локально -> пуш на гит -> деплой изменений к вам</li>
+<li>Через месяц финальный push от меня к вам</li>
+<li>Если прекращаем сотрудничество, то репа остается вам, я делаю ее копирование и продолжаю строить свой SaaS уже в новом репозитории</li>
+</ul>
+
 <p><strong>Что вы получаете навсегда:</strong></p>
+
 <ul>
 <li>Рабочий pipeline на вашем сервере, полностью настроен под ваш продукт</li>
 <li>Все аватары, библиотеки, правила, CRM</li>
 <li>Код на вашем GitHub (fork) — ваш навсегда</li>
 </ul>
+
 <p><strong>Что я оставляю за собой:</strong></p>
+
 <ul>
-<li>Исходный код -- конечно без ваших ключей, контента и тп </li>
+<li>Исходный код -- конечно без ваших ключей, контента и тп</li>
 <li>Полные права на коммерческое использование, распространение и продажу другим клиентам</li>
 <li>Все будущие доработки после завершения проекта</li>
 </ul>
-<p><strong>Простыми словами:</strong> я строю продукт полностью под вас и под ваш запрос. Вы получаете работающую копию навсегда. Я забираю код и продолжаю строить свой бизнес на его основе. </p>
-<hr />
+
+<p><strong>Простыми словами:</strong> я строю продукт полностью под вас и под ваш запрос. Вы получаете работающую копию навсегда. Я забираю код и продолжаю строить свой бизнес на его основе.</p>
+
+<hr>
+
 <h2>Визуальный pipeline</h2>
-<pre><code>┌─────────────────────────────────────────────────────────────────┐
+
+<pre><code>
+┌─────────────────────────────────────────────────────────────────┐
 │  TREND RESEARCH (руками → можно авто)                 │
 │  Конкуренты → референсы → AI разбор на компоненты               │
 └───────────────────────────┬─────────────────────────────────────┘
@@ -178,149 +207,98 @@
 │  → рекомендации что генерить дальше                             │
 └─────────────────────────────────────────────────────────────────┘
 </code></pre>
-<hr />
+
+
+<hr>
+
 <h2>Что дальше (после MVP), не входит в 1 месяц сотрудничества</h2>
+
 <h3>Автоматизация</h3>
+
 <table>
-<thead>
-<tr>
-<th>Фича</th>
-<th>Что даёт</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Автоматический trend watching</strong></td>
-<td>Apify парсит аккаунты конкурентов каждый день → AI находит вирусные форматы → предлагает адаптации</td>
-</tr>
-<tr>
-<td><strong>Автопостинг</strong></td>
-<td>n8n → Blotato → все платформы по расписанию</td>
-</tr>
-<tr>
-<td><strong>Автосбор метрик</strong></td>
-<td>Instagram API → Google Sheets автоматически</td>
-</tr>
-<tr>
-<td><strong>Анализ комментариев</strong></td>
-<td>AI читает комменты конкурентов → достаёт pain points → новые хуки</td>
-</tr>
-</tbody>
+<tr><td>Фича</td><td>Что даёт</td></tr>
+<tr><td>**Автоматический trend watching**</td><td>Apify парсит аккаунты конкурентов каждый день → AI находит вирусные форматы → предлагает адаптации</td></tr>
+<tr><td>**Автопостинг**</td><td>n8n → Blotato → все платформы по расписанию</td></tr>
+<table>
+<tr><td>**Автосбор метрик**</td><td>Instagram API → Google Sheets автоматически</td></tr>
+<tr><td>**Анализ комментариев**</td><td>AI читает комменты конкурентов → достаёт pain points → новые хуки</td></tr>
 </table>
+
 <h3>Масштабирование</h3>
+
 <table>
-<thead>
-<tr>
-<th>Фича</th>
-<th>Что даёт</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Множество аккаунтов</strong></td>
-<td>Каждый аватар = свой аккаунт, свой контент-план</td>
-</tr>
-<tr>
-<td><strong>AI принятие решений</strong></td>
-<td>На основе данных сам выбирает хуки/аватары/сценарии и запускает генерацию</td>
-</tr>
-<tr>
-<td><strong>Оптимизация костов</strong></td>
-<td>Поиск альтернатив моделек для улучшения качества и оптимизации костов</td>
-</tr>
-<tr>
-<td><strong>Веб-интерфейс</strong></td>
-<td>структурный UI с CMS и AI Director в одном месте</td>
-</tr>
-</tbody>
+<tr><td>Фича</td><td>Что даёт</td></tr>
+<tr><td>**Множество аккаунтов**</td><td>Каждый аватар = свой аккаунт, свой контент-план</td></tr>
+<tr><td>**AI принятие решений**</td><td>На основе данных сам выбирает хуки/аватары/сценарии и запускает генерацию</td></tr>
+<table>
+<tr><td>**Оптимизация костов**</td><td>Поиск альтернатив моделек для улучшения качества и оптимизации костов</td></tr>
+<tr><td>**Веб-интерфейс**</td><td>структурный UI с CMS и AI Director в одном месте</td></tr>
 </table>
+
 <h3>Данные → Доминация</h3>
+
 <table>
-<thead>
-<tr>
-<th>Фича</th>
-<th>Что даёт</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Сквозная аналитика</strong></td>
-<td>От видео до оплаты (ManyChat → UTM, возможна ли инкрементальность?</td>
-</tr>
-<tr>
-<td><strong>Автогенерация без аппрува</strong></td>
-<td>Система генерит и постит сама, человек только смотрит отчёты</td>
-</tr>
-<tr>
-<td><strong>Мультиязычность</strong></td>
-<td>Один контент → перевод + новый аватар → другой рынок</td>
-</tr>
-</tbody>
+<tr><td>Фича</td><td>Что даёт</td></tr>
+<tr><td>**Сквозная аналитика**</td><td>От видео до оплаты (ManyChat → UTM, возможна ли инкрементальность?</td></tr>
+<tr><td>**Автогенерация без аппрува**</td><td>Система генерит и постит сама, человек только смотрит отчёты</td></tr>
+<table>
+<tr><td>**Мультиязычность**</td><td>Один контент → перевод + новый аватар → другой рынок</td></tr>
 </table>
-<hr />
+
+<hr>
+
 <h2>Action Plan на месяц</h2>
+
 <h3>Что нужно от вас сразу</h3>
+
 <p><strong>API ключи (ваши аккаунты, ваши деньги):</strong></p>
-<pre><code>□ Krea.ai — 1 аккаунт → API key
+<pre><code>
+□ Krea.ai — 1 аккаунт → API key
 □ Wavespeed — 1 API key
 □ ElevenLabs — 1 API key
 □ ClickUp — API key + workspace ID
 □ Google Sheets — ID таблицы + Apps Script deploy
 □ Claude API — подписка MAX ← мозг pipeline, оркестрирует всё
 </code></pre>
+
 <p><strong>Пополнить ~$100 на старт (Krea + Wavespeed + ElevenLabs).</strong></p>
+
+
 <p><strong>Инфраструктура:</strong></p>
-<pre><code>□ Телефон для постинга + US прокси ($25-55/мес)
+<pre><code>
+□ Телефон для постинга + US прокси ($25-55/мес)
 □ Instagram аккаунт (прогретый в нужном ГЕО)
 □ Проверить что Instagram определяет правильную локацию
 </code></pre>
+
 <p><strong>Информация о продукте (нужна сразу):</strong></p>
-<pre><code>□ Кто целевая аудитория? Портреты, поведение в продукте, паттерны принятия решения, AJTBD, с какими решениями сравнивают 
+<pre><code>
+□ Кто целевая аудитория? Портреты, поведение в продукте, паттерны принятия решения, AJTBD, с какими решениями сравнивают
 □ Маркетинг паттерны: Кого смотрят? Кому доверяют? Что цепляет? Какие сообщения уже тестировали? Что работает, что нет?
 □ Что конвертит в покупку? Что нужно для принятия решения? Какие офферы/энтри поинты в продукт есть? (free lesson, guides, webinars, free registration?)
-□ Скриншоты / скринкасты продукта для product placement + описание фичей и флоу 
+□ Скриншоты / скринкасты продукта для product placement + описание фичей и флоу
 </code></pre>
-<hr />
+
+<hr>
+
 <h2>ClickUp как интерфейс (AI Director)</h2>
+
 <h3>Зачем ClickUp вместо Telegram</h3>
+
 <table>
-<thead>
-<tr>
-<th></th>
-<th>Telegram</th>
-<th>ClickUp</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Визуальный статус</td>
-<td>Нет</td>
-<td>Kanban board — видно все задачи</td>
-</tr>
-<tr>
-<td>Команда</td>
-<td>1 человек</td>
-<td>Вся команда видит прогресс</td>
-</tr>
-<tr>
-<td>Возврат на доработку</td>
-<td>Написать "переделай"</td>
-<td>Перетащить карточку назад</td>
-</tr>
-<tr>
-<td>История</td>
-<td>Скролить чат</td>
-<td>Всё в карточке задачи</td>
-</tr>
-<tr>
-<td>Файлы</td>
-<td>В чате (теряются)</td>
-<td>В задаче (прикреплены)</td>
-</tr>
-</tbody>
+<tr><td></td><td>Telegram</td><td>ClickUp</td></tr>
+<tr><td>Визуальный статус</td><td>Нет</td><td>Kanban board — видно все задачи</td></tr>
+<tr><td>Команда</td><td>1 человек</td><td>Вся команда видит прогресс</td></tr>
+<table>
+<tr><td>Возврат на доработку</td><td>Написать "переделай"</td><td>Перетащить карточку назад</td></tr>
+<tr><td>История</td><td>Скролить чат</td><td>Всё в карточке задачи</td></tr>
+<tr><td>Файлы</td><td>В чате (теряются)</td><td>В задаче (прикреплены)</td></tr>
 </table>
+
 <h3>Board структура</h3>
-<pre><code>📥 Reference    → видео-референс кинули сюда
+
+<pre><code>
+📥 Reference    → видео-референс кинули сюда
 🔍 Analysis     → AI проанализировал, написал план в комментарии
 👤 Avatar       → выбран аватар
 ✅ Approved     → план одобрен
@@ -331,18 +309,24 @@
 📱 Post        → одобрено, ждёт постинга
 ✅ Posted      → опубликовано, собираем метрики
 </code></pre>
+
 <h3>Как работает технически</h3>
-<pre><code>1. Человек создаёт задачу в &quot;Reference&quot; → прикрепляет видео
+
+<pre><code>
+1. Человек создаёт задачу в "Reference" → прикрепляет видео
 2. ClickUp webhook → сервер ловит → Claude API анализирует
-3. Claude пишет план в комментарий к задаче → двигает в &quot;Analysis&quot;
-4. Человек читает план → одобряет → двигает в &quot;Approved&quot;
-5. Webhook ловит → pipeline генерит → прикрепляет кадры → &quot;Frames&quot;
-6. Кадры одобрены → генерит видео → &quot;Video&quot; → &quot;Assembly&quot;
-7. Финальное видео прикреплено → &quot;Review&quot;
-8. Одобрено → &quot;Post&quot; → автопостинг или ручной
+3. Claude пишет план в комментарий к задаче → двигает в "Analysis"
+4. Человек читает план → одобряет → двигает в "Approved"
+5. Webhook ловит → pipeline генерит → прикрепляет кадры → "Frames"
+6. Кадры одобрены → генерит видео → "Video" → "Assembly"
+7. Финальное видео прикреплено → "Review"
+8. Одобрено → "Post" → автопостинг или ручной
 </code></pre>
+
 <h3>Что нужно в репозитории для ClickUp</h3>
-<pre><code>content-engine/
+
+<pre><code>
+content-engine/
 ├── integrations/
 │   └── clickup/
 │       ├── clickup_webhook.py    ← ловит события из ClickUp
@@ -351,8 +335,11 @@
 ├── .env.example                  ← добавить CLICKUP_API_KEY + CLICKUP_WORKSPACE_ID
 └── ...
 </code></pre>
+
 <h3>ClickUp API — возможности и ограничения</h3>
+
 <p><strong>Что МОЖНО:</strong></p>
+
 <ul>
 <li>Создавать/обновлять задачи</li>
 <li>Писать комментарии</li>
@@ -361,22 +348,16 @@
 <li>Ловить webhooks (задача перемещена, комментарий добавлен)</li>
 <li>Кастомные поля (аватар, hook, pipeline type, cost)</li>
 </ul>
+
 <p><strong>Ограничения:</strong></p>
+
 <ul>
 <li>Файлы: максимум ~100MB на attachment (видео 720p обычно 2-10MB — ок)</li>
 <li>Rate limit: 100 запросов в минуту (достаточно)</li>
 <li>Webhooks: нужен публичный URL (сервер с доменом)</li>
 </ul>
-<p><strong>Для нашего flow проблем нет</strong> — видео 720p весят 1-10MB, это далеко от лимита.</p></div>
-    <script>
-        function checkPwd() {
-            if (document.getElementById('pwd').value === 'learnlink') {
-                document.getElementById('password-screen').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-            } else {
-                document.getElementById('error').style.display = 'block';
-            }
-        }
-    </script>
-</body>
-</html>
+
+<p><strong>Для нашего flow проблем нет</strong> — видео 720p весят 1-10MB, это далеко от лимита.</p>
+</div>
+<script>function checkPwd(){if(document.getElementById('pwd').value==='learnlink'){document.getElementById('password-screen').style.display='none';document.getElementById('content').style.display='block'}else{document.getElementById('error').style.display='block'}}</script>
+</body></html>
